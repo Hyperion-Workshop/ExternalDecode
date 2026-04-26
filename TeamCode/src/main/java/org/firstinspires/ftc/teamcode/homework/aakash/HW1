@@ -7,9 +7,9 @@ System.out.println("Hello World!");
 
            while (true) {
                System.out.print(a + " ");
-               int next = a + b;
+               int ext = a + b;
                a = b;
-               b = next;
+               b = ext;
            }
        }
    }
