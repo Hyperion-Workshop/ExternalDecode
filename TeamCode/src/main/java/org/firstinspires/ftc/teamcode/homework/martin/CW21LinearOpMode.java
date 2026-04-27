@@ -26,19 +26,18 @@ public class CW21LinearOpMode extends LinearOpMode {
         }
         waitForStart();
         while(opModeIsActive()){
-            timer.reset();
-            while(timer.seconds() <= 5) {
+            if(timer.seconds() <= 5) {
                 lf.setPower(1);
                 lb.setPower(1);
                 rf.setPower(1);
                 rb.setPower(1);
-            }
-            timer.reset();
-            while(timer.seconds() <= 1){
+            }else if(timer.seconds() <=6){
                 lf.setPower(1);
                 lb.setPower(1);
                 rf.setPower(-1);
                 rb.setPower(-1);
+            }else{
+                timer.reset();
             }
         }
     }
