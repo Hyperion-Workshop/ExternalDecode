@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.homework.shane;
 
 public class HW1 {
     public static void main(String[] args) {
-        System.out.print(getFibonacci(10));
+        System.out.print(getFibonacci(11));
     }
 
     public static int getFibonacci(int index) {
