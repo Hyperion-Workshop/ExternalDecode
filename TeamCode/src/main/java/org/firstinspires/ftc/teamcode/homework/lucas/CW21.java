@@ -9,10 +9,10 @@ public class CW21 extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         while (opModeInInit()) {
-            dtMotorLF = hardwareMap.get(DcMotorImplEx.class, "Dt.Motor.lf");
-            dtMotorRF = hardwareMap.get(DcMotorImplEx.class, "Dt.Motor.rf");
-            dtMotorLB = hardwareMap.get(DcMotorImplEx.class, "Dt.Motor.lb");
-            dtMotorRB = hardwareMap.get(DcMotorImplEx.class, "Dt.Motor.rb");
+            dtMotorLF = hardwareMap.get(DcMotorImplEx.class, "Dt.motor.lf");
+            dtMotorRF = hardwareMap.get(DcMotorImplEx.class, "Dt.motor.rf");
+            dtMotorLB = hardwareMap.get(DcMotorImplEx.class, "Dt.motor.lb");
+            dtMotorRB = hardwareMap.get(DcMotorImplEx.class, "Dt.motor.rb");
             dtMotorLF.setDirection(DcMotorSimple.Direction.REVERSE);
             dtMotorRF.setDirection(DcMotorSimple.Direction.REVERSE);
             dtMotorLB.setDirection(DcMotorSimple.Direction.FORWARD);
