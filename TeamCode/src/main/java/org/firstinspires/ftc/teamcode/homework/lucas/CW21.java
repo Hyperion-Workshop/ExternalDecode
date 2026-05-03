@@ -24,25 +24,25 @@ public class CW21 extends LinearOpMode {
             if (timer.seconds() <= 2) {
                 setPower(1, 1, 1, 1); //drive forward
             }
-            else if (timer.seconds() > 2 && timer.seconds() <= 4) {
+            else if (timer.seconds() <= 4) {
                 setPower(-1,-1,1,1); //turn right
             }
-            else if (timer.seconds() > 4 && timer.seconds() <= 6) {
+            else if (timer.seconds() <= 6) {
                 setPower(1, 1, 1, 1); // drive forward
             }
-            else if (timer.seconds() > 6 && timer.seconds() <= 8) {
+            else if (timer.seconds() <= 8) {
                 setPower(-1, -1, 1, 1); //turn right
             }
-            else if (timer.seconds() > 8 && timer.seconds() <= 10) {
+            else if (timer.seconds() <= 10) {
                 setPower(1,1,1,1); //drive forward
             }
-            else if (timer.seconds() > 10 && timer.seconds() <= 12) {
+            else if (timer.seconds() <= 12) {
                 setPower(-1, -1, 1, 1); //turn right
             }
-            else if (timer.seconds() > 12 && timer.seconds() <= 14) {
+            else if (timer.seconds() <= 14) {
                 setPower(1,1,1,1); //drive forward
             }
-            else if (timer.seconds() > 14 && timer.seconds() <= 16) {
+            else if (timer.seconds() <= 16) {
                 setPower(-1,-1,1,1); //turn right
             }
             else {
