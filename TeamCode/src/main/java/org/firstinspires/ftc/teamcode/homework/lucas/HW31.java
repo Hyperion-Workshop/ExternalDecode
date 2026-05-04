@@ -1,11 +1,15 @@
 package org.firstinspires.ftc.teamcode.homework.lucas;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotorImplEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.util.ElapsedTime;
-public class CW21 extends LinearOpMode {
+
+import org.firstinspires.ftc.teamcode.hyperionModules.PinpointLocalizer;
+@Autonomous(name = "square")
+public class HW31 extends LinearOpMode {
     DcMotorImplEx dtMotorLF, dtMotorRF, dtMotorLB, dtMotorRB;
-    ElapsedTime timer;
+    PinpointLocalizer pinpointLocalizer;
+
     @Override
     public void runOpMode() throws InterruptedException {
         while (opModeInInit()) {
@@ -17,36 +21,36 @@ public class CW21 extends LinearOpMode {
             dtMotorRF.setDirection(DcMotorSimple.Direction.FORWARD);
             dtMotorLB.setDirection(DcMotorSimple.Direction.REVERSE);
             dtMotorRB.setDirection(DcMotorSimple.Direction.FORWARD);
+            pinpointLocalizer = new PinpointLocalizer(hardwareMap);
         }
         waitForStart();
-        timer.reset();
         while (opModeIsActive()) {
-            if (timer.seconds() <= 2) {
-                setPower(1, 1, 1, 1); //drive forward
-            }
-            else if (timer.seconds() <= 4) {
-                setPower(-1,-1,1,1); //turn right
-            }
-            else if (timer.seconds() <= 6) {
-                setPower(1, 1, 1, 1); // drive forward
-            }
-            else if (timer.seconds() <= 8) {
-                setPower(-1, -1, 1, 1); //turn right
-            }
-            else if (timer.seconds() <= 10) {
+            if (pinpointLocalizer.getX() < 48) {
                 setPower(1,1,1,1); //drive forward
             }
-            else if (timer.seconds() <= 12) {
+            else if (pinpointLocalizer.getHeading() <= 90) {
                 setPower(-1, -1, 1, 1); //turn right
             }
-            else if (timer.seconds() <= 14) {
+            else if (pinpointLocalizer.getY() < 48) {
                 setPower(1,1,1,1); //drive forward
             }
-            else if (timer.seconds() <= 16) {
-                setPower(-1,-1,1,1); //turn right
+            else if (pinpointLocalizer.getHeading() <= 180) {
+                setPower(-1, -1, 1, 1); //turn right
+            }
+            else if (pinpointLocalizer.getX() > 0) {
+                setPower(1,1,1,1); //drive forward
+            }
+            else if (pinpointLocalizer.getHeading() <= 270) {
+                setPower(-1, -1, 1, 1); //turn right
+            }
+            else if (pinpointLocalizer.getY() > 0) {
+                setPower(1,1,1,1); //drive forward
+            }
+            else if (pinpointLocalizer.getHeading() <= 0) {
+                setPower(-1, -1, 1, 1); //turn right
             }
             else {
-                setPower(0,0,0,0); //stop, square complete
+                setPower(0,0,0,0);
             }
         }
     }
