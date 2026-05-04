@@ -2,10 +2,6 @@ package org.firstinspires.ftc.teamcode.hyperionModules;
 
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
-import org.firstinspires.ftc.robotcore.external.navigation.Pose2D;
-import org.firstinspires.ftc.robotcore.external.navigation.UnnormalizedAngleUnit;
 import org.firstinspires.ftc.teamcode.GoBildaPinpointDriver;
 
 
@@ -58,6 +54,8 @@ public class PinpointLocalizer {
     public double getY() {
         return pinpoint.getPosY();
     }
+
+    public double getHeading() {return pinpoint.getHeading();}
 
     public enum ResetMode {
         YES,
