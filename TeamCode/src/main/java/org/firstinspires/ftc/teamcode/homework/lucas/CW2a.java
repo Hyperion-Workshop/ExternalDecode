@@ -3,7 +3,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotorImplEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
-public class CW21 extends LinearOpMode {
+public class CW2a extends LinearOpMode {
     DcMotorImplEx dtMotorLF, dtMotorRF, dtMotorLB, dtMotorRB;
     ElapsedTime timer;
     @Override

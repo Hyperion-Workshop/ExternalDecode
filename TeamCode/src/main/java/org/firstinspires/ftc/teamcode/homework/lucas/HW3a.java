@@ -6,10 +6,10 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 import org.firstinspires.ftc.teamcode.hyperionModules.PinpointLocalizer;
 @Autonomous(name = "square")
-public class HW31 extends LinearOpMode {
+public class HW3a extends LinearOpMode {
     DcMotorImplEx dtMotorLF, dtMotorRF, dtMotorLB, dtMotorRB;
     PinpointLocalizer pinpointLocalizer;
-
+    boolean squareCompleted = false;
     @Override
     public void runOpMode() throws InterruptedException {
         while (opModeInInit()) {
@@ -25,32 +25,41 @@ public class HW31 extends LinearOpMode {
         }
         waitForStart();
         while (opModeIsActive()) {
-            if (pinpointLocalizer.getX() < 48) {
+            if (!squareCompleted) { //start position x = 0 , y = 0 , 0 degrees
                 setPower(1,1,1,1); //drive forward
-            }
-            else if (pinpointLocalizer.getHeading() <= 90) {
+                while (pinpointLocalizer.getX() < 48) { //until x is 48
+                    continue;
+                }
                 setPower(-1, -1, 1, 1); //turn right
-            }
-            else if (pinpointLocalizer.getY() < 48) {
+                while (pinpointLocalizer.getHeading() <= 90) { //until 90 degrees
+                    continue;
+                }
                 setPower(1,1,1,1); //drive forward
-            }
-            else if (pinpointLocalizer.getHeading() <= 180) {
+                while (pinpointLocalizer.getY() < 48) { //until y is 48
+                    continue;
+                }
                 setPower(-1, -1, 1, 1); //turn right
-            }
-            else if (pinpointLocalizer.getX() > 0) {
+                while (pinpointLocalizer.getHeading() <= 180) { //until 180 degrees
+                    continue;
+                }
                 setPower(1,1,1,1); //drive forward
-            }
-            else if (pinpointLocalizer.getHeading() <= 270) {
+                while (pinpointLocalizer.getX() > 0) { //until x is back at 0
+                    continue;
+                }
                 setPower(-1, -1, 1, 1); //turn right
-            }
-            else if (pinpointLocalizer.getY() > 0) {
+                while (pinpointLocalizer.getHeading() <= 270) { //until 270 degrees
+                    continue;
+                }
                 setPower(1,1,1,1); //drive forward
-            }
-            else if (pinpointLocalizer.getHeading() <= 0) {
-                setPower(-1, -1, 1, 1); //turn right
-            }
-            else {
+                while (pinpointLocalizer.getY() > 0) { //until y is back at 0, robot back to x = 0, y = 0
+                    continue;
+                }
+                setPower(-1,-1,1,1); //turn right
+                while (pinpointLocalizer.getHeading() <= 0) { //until back at 0 degrees, starting position
+                    continue;
+                }
                 setPower(0,0,0,0);
+                squareCompleted = true;
             }
         }
     }
