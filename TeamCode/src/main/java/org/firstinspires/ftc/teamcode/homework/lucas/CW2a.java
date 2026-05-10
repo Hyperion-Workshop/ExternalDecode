@@ -3,7 +3,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotorImplEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
-public class CW21 extends LinearOpMode {
+public class CW2a extends LinearOpMode {
     DcMotorImplEx dtMotorLF, dtMotorRF, dtMotorLB, dtMotorRB;
     ElapsedTime timer;
     @Override
@@ -14,8 +14,8 @@ public class CW21 extends LinearOpMode {
             dtMotorLB = hardwareMap.get(DcMotorImplEx.class, "Dt.motor.lb");
             dtMotorRB = hardwareMap.get(DcMotorImplEx.class, "Dt.motor.rb");
             dtMotorLF.setDirection(DcMotorSimple.Direction.REVERSE);
-            dtMotorRF.setDirection(DcMotorSimple.Direction.REVERSE);
-            dtMotorLB.setDirection(DcMotorSimple.Direction.FORWARD);
+            dtMotorRF.setDirection(DcMotorSimple.Direction.FORWARD);
+            dtMotorLB.setDirection(DcMotorSimple.Direction.REVERSE);
             dtMotorRB.setDirection(DcMotorSimple.Direction.FORWARD);
         }
         waitForStart();
