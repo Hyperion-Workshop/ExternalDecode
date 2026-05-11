@@ -23,7 +23,6 @@ public class CW4 extends OpMode {
     public ElapsedTime timer = new ElapsedTime(ElapsedTime.Resolution.MILLISECONDS);
     PinpointLocalizer localizer;
 
-
     @Override
     public void init() {
         localizer = new PinpointLocalizer(hardwareMap);
