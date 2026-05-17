@@ -48,7 +48,7 @@ public class HW4 extends LinearOpMode {
             currentTime = timer.seconds();
             openClaw();
         }
-        
+
         waitForStart();
         while (opModeIsActive()) {
             /* your code here */
