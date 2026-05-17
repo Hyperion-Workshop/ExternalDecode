@@ -1,9 +1,6 @@
 package org.firstinspires.ftc.teamcode.homework.shane;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorImpl;
 import com.qualcomm.robotcore.hardware.DcMotorImplEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -17,7 +14,7 @@ left motors REVERSE, right motors FORWARD
 robot drive forward for X seconds, turn right, drive forward, etc.
 Time-based controls
 */
-public class CW1 extends LinearOpMode {
+public class HW2 extends LinearOpMode {
     DcMotorImplEx motorlf;
     DcMotorImplEx motorlb;
     DcMotorImplEx motorrf;

@@ -12,7 +12,6 @@ public class HyperionColorSensor {
     final float[] P_LOW = {0.0015f, 0.0015f, 0.0015f};
     final float[] P_HIGH = {0.0015f, 0.0015f, 0.0015f};
 
-
     public HyperionColorSensor(HardwareMap hardwareMap, String name) {
         colorSensor = hardwareMap.get(NormalizedColorSensor.class, name);
     }

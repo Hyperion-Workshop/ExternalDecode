@@ -3,7 +3,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotorImplEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
-public class CW21 extends LinearOpMode {
+public class CW2a extends LinearOpMode {
     DcMotorImplEx dtMotorLF, dtMotorRF, dtMotorLB, dtMotorRB;
     ElapsedTime timer;
     @Override
@@ -14,8 +14,8 @@ public class CW21 extends LinearOpMode {
             dtMotorLB = hardwareMap.get(DcMotorImplEx.class, "Dt.motor.lb");
             dtMotorRB = hardwareMap.get(DcMotorImplEx.class, "Dt.motor.rb");
             dtMotorLF.setDirection(DcMotorSimple.Direction.REVERSE);
-            dtMotorRF.setDirection(DcMotorSimple.Direction.REVERSE);
-            dtMotorLB.setDirection(DcMotorSimple.Direction.FORWARD);
+            dtMotorRF.setDirection(DcMotorSimple.Direction.FORWARD);
+            dtMotorLB.setDirection(DcMotorSimple.Direction.REVERSE);
             dtMotorRB.setDirection(DcMotorSimple.Direction.FORWARD);
         }
         waitForStart();
@@ -24,25 +24,25 @@ public class CW21 extends LinearOpMode {
             if (timer.seconds() <= 2) {
                 setPower(1, 1, 1, 1); //drive forward
             }
-            else if (timer.seconds() > 2 && timer.seconds() <= 4) {
+            else if (timer.seconds() <= 4) {
                 setPower(-1,-1,1,1); //turn right
             }
-            else if (timer.seconds() > 4 && timer.seconds() <= 6) {
+            else if (timer.seconds() <= 6) {
                 setPower(1, 1, 1, 1); // drive forward
             }
-            else if (timer.seconds() > 6 && timer.seconds() <= 8) {
+            else if (timer.seconds() <= 8) {
                 setPower(-1, -1, 1, 1); //turn right
             }
-            else if (timer.seconds() > 8 && timer.seconds() <= 10) {
+            else if (timer.seconds() <= 10) {
                 setPower(1,1,1,1); //drive forward
             }
-            else if (timer.seconds() > 10 && timer.seconds() <= 12) {
+            else if (timer.seconds() <= 12) {
                 setPower(-1, -1, 1, 1); //turn right
             }
-            else if (timer.seconds() > 12 && timer.seconds() <= 14) {
+            else if (timer.seconds() <= 14) {
                 setPower(1,1,1,1); //drive forward
             }
-            else if (timer.seconds() > 14 && timer.seconds() <= 16) {
+            else if (timer.seconds() <= 16) {
                 setPower(-1,-1,1,1); //turn right
             }
             else {
