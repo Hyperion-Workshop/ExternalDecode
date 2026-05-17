@@ -46,9 +46,10 @@ public class HW4 extends LinearOpMode {
                 case DRIVE_TO_THING:
                     if (!arrivedAtThing) {
                         driveToThing();
+                        state = State.OPEN_CLAW1;
                     }
                     else {
-                        state = State.OPEN_CLAW1;
+                        state = State.CLOSE_CLAW;
                         timer.reset();
                     }
                     break;
@@ -57,7 +58,7 @@ public class HW4 extends LinearOpMode {
                         openClaw();
                     }
                     else {
-                        state = State.CLOSE_CLAW;
+                        state = State.DRIVE_TO_THING;
                         timer.reset();
                     }
                     break;
