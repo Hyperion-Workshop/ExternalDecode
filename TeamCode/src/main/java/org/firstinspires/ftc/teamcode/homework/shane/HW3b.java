@@ -11,7 +11,7 @@ public class HW3b extends OpMode {
     Telemetry telemetry;
     HyperionTelemetry hyperionTelemetry;
 
-    hyperionTelemetry = new HyperionTelemetry(Telemetry);
+    hyperionTelemetry = new HyperionTelemetry(telemetry);
     public float red() {
         return colorSensor.getNormalizedColors().red;
     }
