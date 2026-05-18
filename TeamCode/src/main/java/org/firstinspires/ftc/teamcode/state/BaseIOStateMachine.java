@@ -11,7 +11,10 @@ public abstract class BaseIOStateMachine<T extends Enum<T>> extends AbstractStat
     super(logger);
   }
 
-  protected void onSwitchState() {
+    protected BaseIOStateMachine() {
+    }
+
+    protected void onSwitchState() {
     super.onSwitchState();
     readyForStateChange = false;
   }
